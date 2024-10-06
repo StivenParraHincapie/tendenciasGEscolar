@@ -24,3 +24,5 @@ Trabajo elaborado por:
 
 * Para los exporte de las calificaciones:
 desde el entorno en el front:  npm install jspdf jspdf-autotable y npm install jspdf 
+
+
