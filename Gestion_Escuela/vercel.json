@@ -1,6 +1,6 @@
 {
     "builds": [{
-        "src": "Gestion_Escuela/wsgi.py",  
+        "src": "TENDENCIASGESCOLAS/Gestion_Escuela/Gestion_Escuela/wsgi.py",  
         "use": "@vercel/python",            
         "config": { 
             "maxLambdaSize": "15mb",       
@@ -10,7 +10,7 @@
     "routes": [
         {
             "src": "/(.*)",                
-            "dest": "Gestion_Escuela/wsgi.py" 
+            "dest": "TENDENCIASGESCOLAS/Gestion_Escuela/Gestion_Escuela/wsgi.py" 
         }
     ]
 }
