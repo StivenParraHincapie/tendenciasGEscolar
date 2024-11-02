@@ -1,16 +1,19 @@
 {
-    "builds": [{
-        "src": "TENDENCIASGESCOLAS/Gestion_Escuela/Gestion_Escuela/wsgi.py",  
-        "use": "@vercel/python",            
-        "config": { 
-            "maxLambdaSize": "15mb",       
-            "runtime": "python3.11.3"       
+    "version": 2,
+    "builds": [
+        {
+            "src": "TENDENCIASGESCOLAS/Gestion_Escuela/Gestion_Escuela/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.11"
+            }
         }
-    }],
+    ],
     "routes": [
         {
-            "src": "/(.*)",                
-            "dest": "TENDENCIASGESCOLAS/Gestion_Escuela/Gestion_Escuela/wsgi.py" 
+            "src": "/(.*)",
+            "dest": "TENDENCIASGESCOLAS/Gestion_Escuela/Gestion_Escuela/wsgi.py"
         }
     ]
 }
