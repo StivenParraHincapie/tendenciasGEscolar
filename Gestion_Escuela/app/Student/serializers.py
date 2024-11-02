@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Student
 from app.Courses.models import Course
-from app.Grades.models import Grade
 from app.Courses.serializers import CourseSerializer  
 
 class StudentSerializer(serializers.ModelSerializer):
@@ -10,6 +9,7 @@ class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = '__all__'  
+        ref_name = 'StudentSerializer'  
 
     def create(self, validated_data):
         cursos = validated_data.pop('cursos', [])  
@@ -28,9 +28,3 @@ class StudentSerializer(serializers.ModelSerializer):
             instance.cursos.set(cursos)  
 
         return instance
-    
-    
-class CourseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Course
-        fields = '__all__'  

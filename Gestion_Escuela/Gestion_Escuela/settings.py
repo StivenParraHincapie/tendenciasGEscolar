@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'drf_yasg',
     'coreapi',
     'app.Courses',
     'app.Grades',
@@ -57,7 +58,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Gestion_Escuela.wsgi.application'
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'gestion',  # Reemplaza con el nombre de tu base de datos
@@ -67,6 +68,14 @@ DATABASES = {
         'PORT': '5432',  # El puerto predeterminado de PostgreSQL
     }
 }
+'''
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "mydatabase",
+    }
+}
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

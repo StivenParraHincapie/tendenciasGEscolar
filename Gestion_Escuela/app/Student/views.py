@@ -1,16 +1,17 @@
 from rest_framework import generics
-from rest_framework.response import Response
-from .models import Student
+from . import models
 from .serializers import CourseSerializer, StudentSerializer
-from app.Courses import models
-from app.Courses import models
+from .models import Student
+from rest_framework.exceptions import NotFound  
 
 class StudentCoursesView(generics.ListAPIView):
     serializer_class = CourseSerializer  
 
     def get_queryset(self):
-        student_id = self.kwargs['pk']
-        return models.Course.objects.filter(estudiantes__id=student_id)
+        student_id = self.kwargs.get('pk')  
+        if not models.Student.objects.filter(id=student_id).exists():  
+            raise NotFound("El estudiante no existe.")  
+        return models.Course.objects.filter(estudiantes__id=student_id)  
 
 class StudentListCreateView(generics.ListCreateAPIView):
     queryset = Student.objects.all()
